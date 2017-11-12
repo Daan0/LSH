@@ -172,7 +172,7 @@ if __name__ == "__main__":
     # load airline reviews
     reviews_all = pd.read_csv("data/skytrax-reviews-dataset-master/data/airline.csv").content
     # num of reviews to analyse
-    numReviews = 500
+    numReviews = 1000
     # subset of reviews
     reviews = reviews_all[0:numReviews]
     del reviews_all
@@ -200,7 +200,7 @@ if __name__ == "__main__":
     print("---- Top results comparing sets ----")
     for index, value in jaccard_similarity.items():
         if value >= 0.4:
-            print(index, value)
+            print("Document numbers:", index, "Similarity:", value)
             print(reviews[index[0]], "\n")
             print(reviews[index[1]], "\n")
     del jaccard_similarity
@@ -237,7 +237,7 @@ if __name__ == "__main__":
     print("---- Top results comparing signatures ----")
     for index, value in signature_similarity.items():
         if value >= 0.4:
-            print(index, value)
+            print("Document numbers:", index, "Similarity:", value)
             print(reviews[index[0]], "\n")
             print(reviews[index[1]], "\n")
     del signature_similarity
@@ -247,8 +247,8 @@ if __name__ == "__main__":
     #########
 
     t0 = time.time()
-    bands = 20
-    rows = 5
+    bands = 25
+    rows = 4
     # Approximate threshold
     threshold = (1 / bands) ** (1 / rows)
 
@@ -263,7 +263,7 @@ if __name__ == "__main__":
     print("---- Top results comparing signatures after LSH ----")
     for index, value in candidates_estimated_similarity.items():
         if value >= 0.4:
-            print(index, value)
+            print("Document numbers:", index, "Similarity:", value)
             print(reviews[index[0]], "\n")
             print(reviews[index[1]], "\n")
 
