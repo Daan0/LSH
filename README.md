@@ -1,6 +1,5 @@
 # LSH
-In progress: clean code and represent pipeline in class structure.
-Calculating Jaccard Similarity, MinHash and LSH
+Calculating Jaccard Similarity, MinHash and LSH signature comparison
 
 Exercises consists of finding similar items within a dataset, normally in the form of duplicates but also highly similar forms of text.
 
